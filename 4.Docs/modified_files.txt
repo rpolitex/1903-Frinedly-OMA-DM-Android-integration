@@ -1,0 +1,9 @@
+new project packages/apps/FODA
+project build/make/                             branch dev
+ -m     target/product/core.mk
+project device/datalogic/                       branch dev
+ -m     datalogic-common/sepolicy/system_app.te
+ -m     q10/init.target.rc
+project device/qcom/sepolicy/                   branch dev
+ -m     vendor/common/vendor_init.te
+
