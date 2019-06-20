@@ -1,0 +1,35 @@
+# scanner device
+allow system_app scanengine_device:chr_file rw_file_perms;
+
+allow system_app int3rn4lC4ptur3:service_manager add;
+allow system_app scanner_service:service_manager add;
+
+
+allow system_app datalogic_prop:file { getattr open read };
+
+#allow system_app sysfs:file { r_file_perms };
+allow system_app block_device:dir search;
+
+allow system_app frp_block_device:file { open read write };
+allow system_app datalogic_hw_exec:file { execute read open getattr };
+
+allow system_app cache_file:lnk_file { read open getattr };
+
+#allow program_binary hal_configstore_default:binder call;
+#allow program_binary hwservicemanager:binder call;
+
+allow system_app selinuxfs:file r_file_perms;
+
+allow system_app factory_data:dir search;
+allow system_app factory_data:file { r_file_perms };
+allow system_app frp_block_device:file rw_file_perms;
+allow system_app dlaux_block_device:dir {search read write add_name};
+allow system_app dlaux_block_device:file {create open read getattr setattr write append};
+allow system_app dlaux_file:file {open read getattr write};
+allow system_app dlaux_file:dir {search read};
+allow system_app enterprise_file:dir { rw_dir_perms };
+allow system_app enterprise_file:file { create_file_perms rw_file_perms getattr setattr };
+
+# Allow FODA to use persist_misc_file (e.g. /mnt/vendor/persist/misc or /mnt/persist/misc) to store persist data
+allow system_app persist_misc_file:dir { create search getattr setattr open read write add_name };
+allow system_app persist_misc_file:file { create getattr setattr open read write };
