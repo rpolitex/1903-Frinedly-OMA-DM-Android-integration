@@ -76,7 +76,7 @@ SELinux could block the access of FODA to the various folders and places set in 
 1. To build only FODA use: `USE_CCACHE=1 CCACHE_DIR=ccache make FODA`
 1. **Warning!** Watch out that GSI branch builds only three images: vbmeta-, cache- and system.img files So, if you need work on other partitions, yo may to download the it from <https://developers.google.com/android/images>
 
-## 5. Flashinf firmware into device
+## 5. Flashing firmware into device
 1. Connect the Pixel 3XL the PC via the USB cable
 1. Prepare the device for flashing
 
